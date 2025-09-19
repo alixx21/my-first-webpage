@@ -1,97 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My First Webpage</title>
-    
+  <meta charset="UTF-8">
+  <title>MiniPinterest</title>
+  <link rel="stylesheet" href="style.css">
 </head>
-<body style="font-family: 'Arial', sans-serif;">
-    <h1>Alikhan</h1>
-    <h2>2 course, software engineer</h2>
-    <h3>About me:</h3>
-    <p>"My name is Alikhan,Im from Uralsk and 18 years old.Im student in AITU and i love Web programming"</p>
-    <p></p>
-    <p>There is my hobbies:</p>
+<body>
+  <!-- Search bar -->
+  <header>
+    <div class="search-box">
+        <img src="search.png" class="search-icon">
+        <input type="text" placeholder="Search..." class="search-bar">
+    </div>
+  </header>
 
-    <ol>
-        <li>Play games</li>
-        <li>Play football</li>
-        <li>Read manhwas</li>
-    </ol>
+  <!-- Gallery -->
+  <div class="gallery">
+    <div class="card">
+      <img src="https://picsum.photos/200/250" alt="Photo 1">
+      <div class="overlay">
+        <button class="fav-btn">
+            <img src="Fav.png" alt="Favorite">
+        </button>
+        <button>
+            <img src="Download.png" alt="Save">
+        </button>
+        <button>
+            <img src="Share.png" alt="Share">
+        </button>
+      </div>
+    </div>
 
-    <p></p>
-    <p>There is my fav websites:</p>
+    <div class="card">
+      <img src="https://picsum.photos/200/300" alt="Photo 2">
+      <div class="overlay">
+        <button class="fav-btn">
+            <img src="Fav.png" alt="Favorite">
+        </button>
+        <button>
+            <img src="Download.png" alt="Save">
+        </button>
+        <button>
+            <img src="Share.png" alt="Share">
+        </button>
+      </div>
+    </div>
 
-    <ul>
-        <li>YouTube</li>
-        <li>Mangalib</li>
-        <li>Wikipedia</li>
-    </ul>
+    <div class="card">
+      <img src="https://picsum.photos/200/280" alt="Photo 3">
+      <div class="overlay">
+        <button class="fav-btn">
+            <img src="Fav.png" alt="Favorite">
+        </button>
+        <button>
+            <img src="Download.png" alt="Save">
+        </button>
+        <button>
+            <img src="Share.png" alt="Share">
+        </button>
+      </div>
+    </div>
+  </div>
 
-    <p></p>
+  <!-- Vertical left navigation -->
+  <nav class="bottom-nav">
+    <a href="#" class="nav-btn">
+        <img src="Recommendation.png" class="nav-icon" alt="Recommendations">
+    </a>
+    <a href="#" class="nav-btn">
+        <img src="Profile.png" class="nav-icon" alt="Profile">
+    </a>
+    <a href="#" class="nav-btn">
+        <img src="Info.png" class="nav-icon" alt="About">
+    </a>
+  </nav>
 
-
-    <img src="rugd.jpg"  width="200" height="200">
-    <p></p>
-    <a href="https://youtu.be/dQw4w9WgXcQ?si=QHz-dc1kU8Pdis3T" target="_blank">Great vid</a>
-    <p></p>
-    <a href="https://youtu.be/-eh5T2Uqfjw?si=h87gtfP9FE1Hqa1J" target="_blank">Kazakhstan anthem</a>
-    <p></p>
-    <button style ="background-color: black; color:antiquewhite;border-radius:20%;">Tap me</button>
-
-    <p></p>
-
-    <table border="1" ;style="color:antiquewhite; border-color: #000; font-style: italic;">
-        <tr>
-            <th>Subject</th>
-            <th>Day</th>
-            <th>Time</th>
-        </tr>
-        <tr>
-            <th>DAA</th>
-            <th>Monday</th>
-            <th>16:00-18:00</th>
-        </tr>
-        <tr>
-            <th>Russian LANG</th>
-            <th>Tuesday</th>
-            <th>14:00-16:00</th>
-        </tr>
-        <tr>
-            <th>Soft Design Pattern</th>
-            <th>Wednesday</th>
-            <th>14:00-16:00</th>
-        </tr>
-        <tr>
-            <th>DAA</th>
-            <th>Friday</th>
-            <th>19:00-20:00</th>
-        </tr>
-    </table>
-    <p>
-    </p>
-    <p>
-    </p>
-    <h3>My Mood Today</h3>
-    <p>I feel 😊 excited, 🤔 thoughtful, and 💪 motivated to study today!</p>
-    <p>
-    </p>
-    <form>
-    <label for="name">Your name:</label>
-    <input type="text" id="name" name="name" placeholder="Enter your name" required><br><br>
-
-    <label for="email">Your email:</label>
-    <input type="email" id="email" name="email" placeholder="example@gmail.com" required><br><br>
-
-    <label for="colour">Your favorite color:</label>
-    <input type="color" id="colour" name="colour"><br><br>
-
-    <input type="submit" value="Submit">
-</form>
-
+  <script src="script.js"></script>
 </body>
 </html>
-
-
-
