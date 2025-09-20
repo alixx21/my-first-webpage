@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Upload Photo – AsuStar</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <h2>Add photo</h2>
+  </header>
+
+  <main class="upload-container">
+    <!-- Кнопка выбора фото -->
+    <label for="file-upload" class="upload-btn">
+      <img src="images/Add.png" alt="Add Photo Icon">
+      <span>Choose Photo</span>
+    </label>
+    <input id="file-upload" type="file" accept="image/*" style="display: none;">
+
+    <!-- Здесь будет предпросмотр -->
+    <div id="preview"></div>
+  </main>
+
+  <nav class="bottom-nav">
+    <a href="index.html" class="nav-btn">
+        <img src="images/Recommendation.png" class="nav-icon" alt="Home">
+    </a>
+    <a href="upload.html" class="nav-btn active">
+        <img src="images/Add.png" class="nav-icon" alt="Add Photo">
+    </a>
+    <a href="profile.html" class="nav-btn">
+        <img src="images/Profile.png" class="nav-icon" alt="Profile">
+    </a>
+    <a href="about.html" class="nav-btn">
+        <img src="images/Info.png" class="nav-icon" alt="About">
+    </a>
+    
+  </nav>
+
+  <footer>
+    <p>© 2025 AsuStar | Team “Creatives”</p>
+  </footer>
+
+  <script>
+    // Предпросмотр выбранной фотки
+    const fileInput = document.getElementById("file-upload");
+    const preview = document.getElementById("preview");
+
+    fileInput.addEventListener("change", () => {
+      preview.innerHTML = ""; // очищаем старый превью
+      const file = fileInput.files[0];
+      if (file) {
+        const img = document.createElement("img");
+        img.src = URL.createObjectURL(file);
+        img.style.maxWidth = "300px";
+        img.style.borderRadius = "10px";
+        img.style.marginTop = "15px";
+        preview.appendChild(img);
+      }
+    });
+  </script>
+
+</body>
+</html>
