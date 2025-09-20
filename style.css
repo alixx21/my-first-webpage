@@ -5,19 +5,57 @@ body {
   background: #fafafa;
 }
 
-/* Search bar */
+/* --- Боковая навигация --- */
+.bottom-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 70px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  padding-top: 20px;
+  background: #fff;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
+.bottom-nav a.nav-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  text-decoration: none;
+  border-radius: 12px;
+  transition: 0.3s;
+}
+
+.bottom-nav a.nav-btn:hover {
+  background: rgba(0, 0, 0, 0.1);
+}
+
+.nav-icon {
+  width: 30px;
+  height: 30px;
+  object-fit: contain;
+}
+
+/* --- Шапка и поиск --- */
 header {
   position: sticky;
   top: 0;
   background: white;
   padding: 10px 15px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   display: flex;
-  justify-content: flex-start; /* Выровнять поиск слева */
+  justify-content: flex-start;
+  margin-left: 70px; /* Отступ для боковой навигации */
 }
 
 .search-box {
-  margin-left: 60px; /* Сдвиг поиска вправо */
   display: flex;
   align-items: center;
   background: #f2f2f2;
@@ -41,51 +79,113 @@ header {
   font-family: "Inter", "Helvetica Neue", Arial, sans-serif;
 }
 
-/* Gallery */
+/* --- Профиль --- */
+.profile {
+  padding: 30px 15px;
+  text-align: center;
+  margin-left: 70px; /* Отступ для боковой навигации */
+}
+
+.profile-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.profile-avatar {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+
+.profile-name {
+  margin: 5px 0;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.profile-bio {
+  font-size: 15px;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+.profile-stats {
+  display: flex;
+  gap: 30px;
+  margin-bottom: 25px;
+}
+
+.profile-stats div {
+  text-align: center;
+}
+
+.profile-stats strong {
+  font-size: 18px;
+  display: block;
+}
+
+.profile-stats span {
+  font-size: 13px;
+  color: #666;
+}
+
+/* --- Галерея в стиле Pinterest --- */
 .gallery {
-  columns: 4 150px;
-  column-gap: 10px;
-  padding: 15px;
+  column-count: 4;
+  column-gap: 20px;
+  padding: 20px;
+  margin-left: 70px; /* Отступ для боковой навигации */
 }
 
 .card {
   position: relative;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
   break-inside: avoid;
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-3px);
 }
 
 .card img {
   width: 100%;
-  border-radius: 10px;
+  height: auto;
   display: block;
 }
 
+/* Кнопки поверх фото */
 .overlay {
   position: absolute;
   top: 10px;
   right: 10px;
   display: flex;
-  gap: 5px;
+  gap: 6px;
   opacity: 0;
-  transition: 0.5s;
+  transition: opacity 0.4s;
 }
 
 .card:hover .overlay {
   opacity: 1;
 }
 
-/* 🔹 Стеклянный эффект для кнопок */
+/* Стеклянный эффект для кнопок */
 .overlay button {
   border: none;
   padding: 6px;
   border-radius: 12px;
   cursor: pointer;
   font-size: 14px;
-
   background: rgba(255, 255, 255, 0.25);
   backdrop-filter: blur(6px);
   -webkit-backdrop-filter: blur(6px);
-
   border: 1px solid rgba(0, 0, 0, 0.2);
   transition: all 0.5s ease;
 }
@@ -102,39 +202,44 @@ header {
   opacity: 0.9;
 }
 
-/* 🔹 Вертикальная боковая навигация слева */
-.bottom-nav {
-  position: fixed;
-  top: 50%;
-  left: 10px; /* Отступ от левого края */
-  transform: translateY(-50%);
-  display: flex;
-  flex-direction: column; /* Вертикально */
-  gap: 15px; /* Расстояние между кнопками */
-  background: transparent;
-  padding: 0;
-  box-shadow: none;
-  z-index: 1000; /* Чтобы всегда сверху */
+/* --- Страница About --- */
+.about-page {
+  max-width: 800px;
+  margin: 100px auto 40px auto;
+  padding: 0 20px;
 }
 
-.bottom-nav a.nav-btn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 50px;
-  height: 50px;
-  text-decoration: none;
-  border-radius: 12px;
-  transition: 0.3s;
+.about-card {
+  background: #fff;
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  line-height: 1.7;
 }
 
-.bottom-nav a.nav-btn:hover {
-  background: rgba(0,0,0,0.1); /* Лёгкий эффект при наведении */
+.about-card h1 {
+  margin-top: 0;
+  font-size: 28px;
+  text-align: center;
 }
 
-/* Иконки навигации */
-.nav-icon {
-  width: 30px;
-  height: 30px;
-  object-fit: contain;
+.about-card p {
+  font-size: 16px;
+  margin-bottom: 16px;
+}
+
+h2 {
+  margin-left: 70px; /* Отступ, равный ширине навигационной панели */
+  padding-left: 20px; /* Дополнительный отступ для красоты */
+}
+
+/* --- Футер --- */
+footer {
+  background: #f5f5f5;
+  text-align: center;
+  padding: 15px;
+  font-size: 14px;
+  margin-top: 40px;
+  border-top: 1px solid #e0e0e0;
+  margin-left: 70px; /* Отступ для боковой навигации */
 }
