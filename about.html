@@ -1,59 +1,72 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>О нас — MiniPinterest</title>
+  <title>About – AsuStar</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  
-  <nav class="bottom-nav">
-    <a href="index.html" class="nav-btn">
-      <img src="images/Recommendation.png" class="nav-icon" alt="Главная">
-    </a>
-    <a href="profile.html" class="nav-btn">
-      <img src="images/Profile.png" class="nav-icon" alt="Профиль">
-    </a>
-    <a href="about.html" class="nav-btn">
-      <img src="images/Info.png" class="nav-icon" alt="О нас">
-    </a>
-  </nav>
-
-  
+  <!-- Верхняя панель с поиском -->
   <header>
     <div class="search-box">
-      <img src="images/search.png" class="search-icon" alt="Поиск">
-      <input type="text" placeholder="Поиск..." class="search-bar" size="100">
+      <img src="images/search.png" class="search-icon" alt="Search">
+      <input type="text" placeholder="Search..." class="search-bar">
     </div>
   </header>
 
-  
-  <main class="about-page">
-    <section class="about-card">
-      <h1>О проекте MiniPinterest</h1>
-      <p>
-        MiniPinterest is an educational project designed to train your skills
+  <!-- Контент About -->
+  <section class="about">
+  <div class="about-card">
+    <h1>About AsuStar</h1>
+    <p class="about-text">
+      AsuStar — is an educational project designed to train your skills
         HTML, CSS, and JavaScript. You can view pictures here, save them and share them with your friends. 
-      </p>
-      <p>
-        The design is inspired by the real Pinterest, but written from scratch to
-        show how image grids and fixed elements work.
-        the interface.
-      </p>
-      <p>
-        Автор: <strong>Meirzhan and Alikhan</strong> 😊
-      </p>
-    </section>
-  </main>
+    </p>
 
-  <script src="script.js"></script>
+    <h2>Our Team</h2>
+
+    <div class="team">
+      <!-- Автор 1 -->
+      <div class="member">
+        <img src="images/photo_5332569006474920951_y.jpg" alt="Meirzhan" class="member-photo">
+        <h3>Meirzhan</h3>
+        <p class="role">Frontend Developer</p>
+        <p class="contact">📧 erkebaevmejrzhan6@gmail.com<br>📱 +7 700 123 45 67</p>
+      </div>
+
+      <!-- Автор 2 -->
+      <div class="member">
+        <img src="images/rugd.jpg" alt="Alikhan" class="member-photo">
+        <h3>Alikhan</h3>
+        <p class="role">Designer & UI</p>
+        <p class="contact">📧 alikhan@example.com<br>📱 +7 701 765 43 21</p>
+      </div>
+    </div>
+
+    <p class="about-text">
+      We try to make the site stylish and user-friendly.
+    </p>
+  </div>
+</section>
 
 
- <footer>
-  <p>© 2025 MiniPinterest | Team “Creatives”</p>
-  <p>Meirzhan, Alikhan </p>
-</footer>
+  <!-- Навигация слева -->
+  <nav class="bottom-nav">
+    <a href="index.html" class="nav-btn">
+      <img src="images/Recommendation.png" class="nav-icon" alt="Home">
+    </a>
+    <a href="profile.html" class="nav-btn">
+      <img src="images/Profile.png" class="nav-icon" alt="Profile">
+    </a>
+    <a href="about.html" class="nav-btn active">
+      <img src="images/Info.png" class="nav-icon" alt="About">
+    </a>
+  </nav>
 
+  <footer>
+    <p>© 2025 MiniPinterest | Team “Creatives”</p>
+    <p>Meirzhan, Alikhan</p>
+  </footer>
 </body>
 </html>
