@@ -12,14 +12,12 @@
   </header>
 
   <main class="upload-container">
-    <!-- Кнопка выбора фото -->
     <label for="file-upload" class="upload-btn">
       <img src="images/Add.png" alt="Add Photo Icon">
       <span>Choose Photo</span>
     </label>
     <input id="file-upload" type="file" accept="image/*" style="display: none;">
 
-    <!-- Здесь будет предпросмотр -->
     <div id="preview"></div>
   </main>
 
@@ -41,15 +39,15 @@
 
   <footer>
     <p>© 2025 AsuStar | Team “Creatives”</p>
+    <p>Meirzhan, Alikhan</p>
   </footer>
 
   <script>
-    // Предпросмотр выбранной фотки
     const fileInput = document.getElementById("file-upload");
     const preview = document.getElementById("preview");
 
     fileInput.addEventListener("change", () => {
-      preview.innerHTML = ""; // очищаем старый превью
+      preview.innerHTML = ""; 
       const file = fileInput.files[0];
       if (file) {
         const img = document.createElement("img");
@@ -64,3 +62,4 @@
 
 </body>
 </html>
+
