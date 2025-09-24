@@ -7,28 +7,52 @@ body {
 .bottom-nav {
   position: fixed;
   top: 0;
-  left: 0;
-  height: 100%;
-  width: 70px;
+  right: 0;    
+   
+  height: 60px;
+  width: auto;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
   gap: 15px;
-  padding-top: 20px;
-  background: #fff;
-  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
-  z-index: 1000;
+  padding: 0 17px;
+  background: white;
+  z-index: 1018888;
 }
 
+
+
 .bottom-nav a.nav-btn {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 50px;
-  height: 50px;
+  width: 40px;
+  height: 40px;
   text-decoration: none;
   border-radius: 12px;
   transition: 0.3s;
+  z-index: 18888;
+}
+
+.tooltip {
+  position: absolute;
+  bottom: -40px;     
+  left: 50%;
+  transform: translateX(-50%);
+  background: black;
+  color: white;
+  font-size: 12px;
+  padding: 4px 8px;
+  border-radius: 5px;
+  white-space: nowrap;
+  opacity: 0;            
+  pointer-events: none;   
+  transition: opacity 0.2s ease-in-out;
+}
+
+.nav-btn:hover .tooltip {
+  opacity: 1;  
 }
 
 .bottom-nav a.nav-btn:hover {
@@ -45,20 +69,48 @@ header {
   position: sticky;
   top: 0;
   background: white;
-  padding: 10px 15px;
+  padding: 10px 20px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  display: flex;
-  justify-content: flex-start;
-  margin-left: 70px; 
+
+  display:flex;
+  align-items: center;
+  justify-content: flex-start; 
+  gap:15px; 
+  z-index: 14444;
+}
+
+.logo{
+  width: 40px;
+  height: 40px;
+  margin-right: 15px;
+}
+
+.logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.addphoto h3 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 600;
 }
 
 .search-box {
+  flex: 1;                  
+  max-width: 1100px;           
+  margin-left: 15px ;  
+  margin-right: 25px;       
   display: flex;
   align-items: center;
   background: #f2f2f2;
   border-radius: 25px;
   padding: 8px 15px;
 }
+
+
+
 
 .search-icon {
   width: 18px;
@@ -79,7 +131,7 @@ header {
 .profile {
   padding: 30px 15px;
   text-align: center;
-  margin-left: 70px; 
+ 
 }
 
 .profile-header {
@@ -132,8 +184,108 @@ header {
   column-count: 6;
   column-gap: 20px;
   padding: 20px;
-  margin-left: 70px; 
 }
+
+.cards-section {
+  padding: 30px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.cards-section h2 {
+  margin: 0 0 18px 6px;
+  font-size: 1.4rem;
+  color: #333;
+}
+
+.cards-row {
+  display: flex;
+  gap: 20px;
+  align-items: stretch;
+  flex-wrap: wrap;
+}
+
+.flex-card {
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  flex: 1 1 calc(25% - 20px);
+  min-width: 240px;
+}
+
+.flex-card__img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  display: block;
+}
+
+.flex-card__body {
+  padding: 14px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex: 1 1 auto;
+}
+
+.flex-card__title {
+  margin: 0;
+  font-size: 1.05rem;
+  color: #222;
+}
+
+.flex-card__text {
+  margin: 0;
+  color: #666;
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+.flex-card__footer {
+  padding: 12px 16px;
+  border-top: 1px solid rgba(0,0,0,0.04);
+  display: flex;
+  justify-content: flex-end;
+}
+
+.btn-primary {
+  background: #4c4848;
+  color: #fff;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: transform 0.18s ease, box-shadow 0.18s;
+}
+
+.btn-primary:active { transform: scale(.98); }
+
+.flex-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 18px 30px rgba(0,0,0,0.10);
+}
+
+.flex-card:focus-within {
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+}
+
+@media (max-width: 900px) {
+  .cards-row {
+    gap: 16px;
+  }
+  .flex-card {
+    flex: 1 1 100%;
+    min-width: 0;
+  }
+  .flex-card__img { height: 220px; }
+}
+
+
 
 .card {
   position: relative;
@@ -340,9 +492,9 @@ h2 {
 footer {
   position: fixed;
   bottom: 0;
-  left: 70px;            
+  left: 0;            
   right: 0;
-  height: 40px;          
+  height: 30px;          
   background: #f5f5f5;
   border-top: 1px solid #e0e0e0;
 
@@ -362,8 +514,8 @@ footer {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  padding: 20px;
-  margin-left: 90px; 
+  padding: 10px 20px;
+ 
 }
 
 .upload-btn {
@@ -413,6 +565,3 @@ footer {
   background: #fff;      
   object-fit: contain;   
 }
-
-
-
